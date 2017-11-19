@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pers.ryan.portfolio.dao.CommentMapper">
+
+	<resultMap type="pers.ryan.portfolio.domain.Comment" id="BaseResultMap">
+		<id column="C1_id" property="id" jdbcType="INTEGER" />
+		<result column="C1_name" property="name" jdbcType="VARCHAR" />
+		<result column="C1_comment" property="comment" jdbcType="VARCHAR" />
+		<result column="C1_isHost" property="isHost" jdbcType="TINYINT" />
+		<result column="C1_createdDate" property="createdDate"
+			jdbcType="DATE" />
+		<collection property="replies" ofType="pers.ryan.portfolio.domain.Comment">
+			<id column="C2_id" property="id" jdbcType="INTEGER" />
+			<result column="C2_name" property="name" jdbcType="VARCHAR" />
+			<result column="C2_comment" property="comment" jdbcType="VARCHAR" />
+			<result column="C2_isHost" property="isHost" javaType="boolean"
+				jdbcType="TINYINT" />
+			<result column="C2_createdDate" property="createdDate"
+				jdbcType="DATE" />
+		</collection>
+	</resultMap>
+
+	<select id="findComments" resultType="pers.ryan.portfolio.domain.Comment"
+		resultMap="BaseResultMap">
+		SELECT C1.id C1_id, C1.name C1_name, C1.comment C1_comment,
+		C1.isHost C1_isHost,
+		C1.createdDate C1_createdDate, C2.id C2_id,
+		C2.name C2_name, C2.comment C2_comment,
+		C2.isHost C2_isHost,
+		C2.createdDate C2_createdDate, C2.level C2_level,
+		C2.commentId
+		C2_commentId
+		FROM comment C1 left join comment C2
+		ON C1.id =
+		C2.commentId
+		WHERE C1.level = 1
+		ORDER BY C1_id DESC, C2_id
+	</select>
+
+	<insert id="insertCommentById" parameterType="map">
+		INSERT INTO comment
+		(name, comment, commentId, isHost, createdDate, level)
+		VALUES
+		(#{comment.name,jdbcType=VARCHAR}, #{comment.comment,jdbcType=VARCHAR},
+		#{commentId,jdbcType=INTEGER}, #{comment.isHost,jdbcType=TINYINT},
+		#{comment.createdDate,jdbcType=TIMESTAMP}, #{comment.level,jdbcType=INTEGER})
+	</insert>
+	
+	<insert id="insertComment" parameterType="pers.ryan.portfolio.domain.Comment">
+		INSERT INTO comment
+		(name, comment, isHost, createdDate, level)
+		VALUES
+		(#{name,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR},
+		#{isHost,jdbcType=TINYINT}, #{createdDate,jdbcType=TIMESTAMP},
+		#{level,jdbcType=INTEGER})
+	</insert>
+</mapper>
+

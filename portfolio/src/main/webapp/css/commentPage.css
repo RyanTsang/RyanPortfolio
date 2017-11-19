@@ -1,0 +1,15 @@
+.container
+{
+	margin-top: 30px;
+}
+.row
+{
+	margin-top: 10px;
+}
+.media
+{
+	padding: 4px;
+	border-color: #fff;	
+	border-width: 3px;
+	border-style: ridge;
+}

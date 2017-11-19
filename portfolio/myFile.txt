@@ -1,0 +1,111 @@
+|   pom.xml
+|       
++---src
+|   \---main
+|       +---java
+|       |   \---pers
+|       |       \---ryan
+|       |           \---portfolio
+|       |               +---controller
+|       |               |       BaseController.java
+|       |               |       CommentController.java
+|       |               |       ProjectController.java
+|       |               |       UserController.java
+|       |               |       
+|       |               +---dao
+|       |               |       CommentMapper.java
+|       |               |       CommentMapper.xml
+|       |               |       UserMapper.java
+|       |               |       UserMapper.xml
+|       |               |       
+|       |               +---domain
+|       |               |       Comment.java
+|       |               |       User.java
+|       |               |       
+|       |               \---service
+|       |                       CommentService.java
+|       |                       UserService.java
+|       |                       
+|       +---resources
+|       |       jdbc.properties
+|       |       log4j.properties
+|       |       spring-mvc.xml
+|       |       spring-mybatis.xml
+|       |       
+|       \---webapp
+|           +---css
+|           |       commentPage.css
+|           |       main.css
+|           |       pdPage.css
+|           |       referencePage.css
+|           |       
+|           +---CV
+|           |       Zhiyi_ZENG_resume.pdf
+|           |       
+|           +---images
+|           |   |   bg.png
+|           |   |   guesticon.png
+|           |   |   hosticon.png
+|           |   |   me1.png
+|           |   |   me2.png
+|           |   |   me3.png
+|           |   |   
+|           |   \---icon
+|           |           email.svg
+|           |           facebook.svg
+|           |           github.svg
+|           |           icon.jpg
+|           |           linkedin.svg
+|           |           
+|           +---js
+|           |       circle-progress.js
+|           |       clipboard.min.js
+|           |       lateLoad.js
+|           |       myJs.js
+|           |       
+|           \---WEB-INF
+|               |   web.xml
+|               |   
+|               \---jsps
+|                   |   comment.jsp
+|                   |   contact.jsp
+|                   |   index.jsp
+|                   |   projectsdemonstration.jsp
+|                   |   
+|                   +---common
+|                   |       nav.jsp
+|                   |       
+|                   \---projects
+|                           ryanportfolio.jsp
+|                           template.jsp
+|                           
+\---target
+    +---classes
+    |   |   jdbc.properties
+    |   |   log4j.properties
+    |   |   spring-mvc.xml
+    |   |   spring-mybatis.xml
+    |   |   
+    |   \---pers
+    |       \---ryan
+    |           \---portfolio
+    |               +---controller
+    |               |       BaseController.class
+    |               |       CommentController.class
+    |               |       ProjectController.class
+    |               |       UserController.class
+    |               |       
+    |               +---dao
+    |               |       CommentMapper.class
+    |               |       CommentMapper.xml
+    |               |       UserMapper.class
+    |               |       UserMapper.xml
+    |               |       
+    |               +---domain
+    |               |       Comment.class
+    |               |       User.class
+    |               |       
+    |               \---service
+    |                       CommentService.class
+    |                       UserService.class
+    |                       

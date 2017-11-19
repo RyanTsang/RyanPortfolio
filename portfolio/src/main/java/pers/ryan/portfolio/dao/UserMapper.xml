@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pers.ryan.portfolio.dao.UserMapper">
+
+	<select id="findUserById" parameterType="string"
+		resultType="pers.ryan.portfolio.domain.User">
+		SELECT
+		* FROM user WHERE id =#{id}
+	</select>
+
+	<insert id="insertUser" parameterType="pers.ryan.portfolio.domain.User">
+		INSERT INTO user
+		(id,
+		visitCount, num, lastVisit)
+		VALUES(#{id},#{visitCount},#{num},#{lastVisit})
+	</insert>
+
+	<select id="getNextNum" resultType="int">
+		SELECT
+		MAX(num)+1 FROM user
+	</select>
+
+	<update id="updateUser" parameterType="pers.ryan.portfolio.domain.User">
+		UPDATE user
+		SET visitCount = #{visitCount}, num = #{num}, lastVisit = #{lastVisit, jdbcType=TIMESTAMP}
+		WHERE id = #{id}
+	</update>
+</mapper>
+

@@ -1,0 +1,87 @@
+body
+{
+	background-color: #000;
+}
+#background
+{
+	opacity: 0;
+	width: 100%;
+	transition: opacity 1s;
+}
+.navbar 
+{
+	opacity: 0.8;
+}
+.welcomeWords
+{
+	font-size: 2vw;
+	color: #fff;
+}
+.myPage
+{
+	height: 100vh;
+	width:auto;
+}
+.circle
+{
+	position: relative;
+	color: #fff;
+}
+.skillName
+{
+	font-size: 2vw;
+	position: relative;
+}
+.card-header
+{
+	font-weight: 500;
+	font-size: 2.5vw;
+}
+.card-body
+{
+	font-weight: 400;
+	font-size: 1.5vw;
+}
+.scrollDownButton
+{
+	position: fixed;
+	bottom: 50px;
+	left: 50%;
+	width: 46px;
+	height: 46px;
+	margin-left: -23px;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	box-sizing: border-box;
+	display: none;
+}
+.scrollDownButton:hover {
+  opacity: .5;
+}
+
+.scrollDownButton span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin: -12px 0 0 -8px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+.lateLoad, .lateLoad500, .lateLoad1500
+{
+	opacity: 0;
+	transition: opacity 2s; 
+}
+#navbar-side
+{
+	position: fixed;
+	right: 1%;
+    bottom: 2%;
+    transition: opacity 0.5s;
+}

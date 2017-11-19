@@ -1,0 +1,19 @@
+.container li
+{
+	margin-top: 8vh;
+}
+
+p, h1, h2, h3, h4, h5, h6
+{
+	color: #fff;
+} 
+
+code
+{
+	background :F0F0F0
+}
+
+pre {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
